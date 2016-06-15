@@ -1,0 +1,13 @@
+<div class="c-post-pagination">
+    {{#if prev}}
+        <a class="c-post-pagination__item" href="{{page_url prev}}">
+            &larr; Crónicas mais recentes
+        </a>
+    {{/if}}
+
+    {{#if next}}
+        <a class="c-post-pagination__item c-post-pagination__item--older" href="{{page_url next}}">
+            Crónicas anteriores &rarr;
+        </a>
+    {{/if}}
+</div>

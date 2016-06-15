@@ -1,0 +1,41 @@
+{{!< default}}
+{{#post}}
+    <div class="c-post-view {{post_class}}">
+        <div class="c-post-view__header">
+            <h1 class="c-post-view__header__title">{{title}}</h1>
+            {{> "post-meta"}}
+        </div>
+
+        <div class="c-post-view__content">
+            {{content}}
+        </div>
+
+        <div class="c-post-view__footer">
+            <div class="c-post-list">
+                <h2 class="c-post-view__footer__title">Mais Crónicas:</h2>
+           {{#get "posts" limit="4" as |recents|}}
+                {{#foreach recents}}
+                    
+                    <article class="c-post-list__item__footer {{post_class}}">
+         
+                    <h2 class="c-post-list__title">
+                        <a href="{{url}}" title="{{title}}">{{title}}</a>
+                    </h2>
+
+                    <div class="c-post-list__meta">
+                        {{date format="MMMM DD, YYYY"}}
+                    </div>
+            
+                    <div class="c-post-list__excerpt">
+                             <span class="c-post-list__keepreading__footer">
+                                    <a href="{{url}}" title="{{title}}">Ler crónica</a>
+                            </span>
+                    </div>
+                </article>
+
+                {{/foreach}}
+            {{/get}}
+        </div>
+        </div>
+    </div>
+{{/post}}

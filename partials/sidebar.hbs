@@ -1,0 +1,58 @@
+<div id="site-sidebar" class="c-site-sidebar">
+    {{! Sidebar header with blog cover and logo images }}
+    <div class="c-sidebar-header" style="background-image: url({{@blog.cover}})">
+        <a class="c-sidebar-header__link" href="{{@blog.url}}" title="{{@blog.title}}">
+            <img class="c-sidebar-header__image" src="{{@blog.logo}}" alt="{{@blog.title}}">
+        </a>
+    </div>
+
+    {{! Sidebar blog title }} {{#is "home"}}
+    <h1 class="c-sidebar-blog-title">{{else}}<h2 class="c-sidebar-blog-title">{{/is}}
+        <a class="c-sidebar-blog-title__link" href="{{@blog.url}}" title="{{@blog.title}}">
+            {{@blog.title}}
+        </a>
+    {{#is "home"}}</h1>{{else}}</h2>{{/is}} {{! Sidebar blog description }}
+    <h2 class="c-sidebar-blog-description">
+        {{@blog.description}}
+    </h2> {{! Sidebar contact links }}
+    <!--
+    <div class="c-sidebar-contact-links">
+        <a class="c-sidebar-contact-links__item" href="#" target="_blank">
+            github
+        </a>
+
+        <a class="c-sidebar-contact-links__item" href="#" target="_blank">
+            twitter
+        </a>
+
+        <a class="c-sidebar-contact-links__item" href="#" target="_blank">
+            linkedin
+        </a>
+
+        <a class="c-sidebar-contact-links__item" href="#">
+            email
+        </a>
+    </div>
+-->
+
+    {{! Sidebar navigation - Ghost's menu }} {{navigation}} {{! Sidebar promotion / additional links }}
+    <div class="c-sidebar-promotion-links">
+        <a target="_blank" title="Facebook" href="https://www.facebook.com/cronicasmaternidade">
+            <img src="{{asset "img/facebook.png"}}" border="0" width="32" height="32" alt="Facebook" style="margin: 4px; opacity: 1;">
+        </a>
+        <a target="_blank" title="Facebook" href="https://instagram.com/cronicasdamaternidade/">
+            <img src="{{asset "img/instagram.png"}}" border="0" width="32" height="32" alt="Facebook" style="margin: 4px; opacity: 1;">
+        </a>
+
+        <a target="_blank" title="Facebook" href="https://plus.google.com/117047569549216534624/posts">
+            <img src="{{asset "img/googleplus.png"}}" border="0" width="32" height="32" alt="Facebook" style="margin: 4px; opacity: 1;">
+        </a>
+
+    </div>
+    
+    <div class="c-sidebar-credits">
+    Autoria de Patrícia Costa <br>
+    Todos os direitos reservados. <br>
+     {{date dateToFormat format="YYYY"}}
+    </div>
+</div>
