@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    {{>"head"}}
-    {{ghost_head}}
+    {{>"head"}} {{ghost_head}}
 </head>
 
 <body class="{{body_class}}">
-<!--## Plugins-->
-<!--Facebook-->
+    <!--## Plugins-->
+    <!--Facebook-->
     <div id="fb-root"></div>
 
-    
+
     <div id="site-wrapper" class="c-site-wrapper">
         <div id="site-viewport" class="c-site-viewport">
             {{>"sidebar"}}
 
             <div id="site-content" class="c-site-content">
-                {{> "mobile-header"}}
-                {{{body}}}
+                {{> "mobile-header"}} {{{body}}}
             </div>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/pt.js"></script>
-    <script src="{{asset "js/scripts.js"}}"></script>
-    <script src="{{asset "js/plugins.js"}}"></script>
+    <script src="{{asset " js/scripts.js "}}"></script>
     {{ghost_foot}}
 </body>
+
 </html>
