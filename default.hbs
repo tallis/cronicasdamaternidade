@@ -74,6 +74,45 @@
           ga('send', 'pageview');
 
     </script>
+    
+    
+   <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+
+
+
+    <script type="text/javascript" >
+        // Adding random posts
+        window.onload = function () {
+            $.get(
+                ghost.url.api('posts', {
+                    limit: 'all'
+                })
+            ).done(onSuccess);
+        };
+
+        function onSuccess(data) {
+            var $result = $('#post-placeholder-random');
+            var sortedPosts = shuffleArray(data.posts);
+            var displayPosts = sortedPosts.slice(0, 4);
+            $.each(displayPosts, function (i, post) {
+                console.log(post)
+                $result.append(
+                    '<article class="c-post-list__item__footer"><h2 class="c-post-list__title"><a href="' + post.url + '" title="' + post.url + '">' + post.title + '</a></h2><div class="c-post-list__meta">' + moment(post.created_at).format("DD MMM, YYYY") + '</div><div class="c-post-list__excerpt"><span class="c-post-list__keepreading__footer"><a href="' + post.url + '" title="' + post.title + '">Ler crónica</a></span></div></article>'
+                );
+            });
+        }
+
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+    </script>
+
     {{ghost_foot}}
 </body>
 
