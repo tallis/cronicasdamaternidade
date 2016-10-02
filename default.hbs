@@ -52,7 +52,8 @@
         ga('send', 'pageview');
     </script>
     <script src="{{asset "js/scripts.js"}}"></script>
-
+  <script src="{{asset "js/plugins.js"}}"></script>-->
+    
     <script type="application/javascript">
 
             // Facebook plugin
@@ -76,13 +77,10 @@
     </script>
     
     
-   <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
-
-
-
     <script type="text/javascript" >
         // Adding random posts
         window.onload = function () {
+            console.log("Loaded pages")
             $.get(
                 ghost.url.api('posts', {
                     limit: 'all'
