@@ -342,7 +342,7 @@ h3 {
 
 @media (max-width: 640px) {
     .c-site-content {
-        padding: 20px
+        padding: 0px
     }
 }
 
@@ -354,8 +354,7 @@ h3 {
 }
 
 .c-mobile-header {
-    margin-bottom: 30px;
-    padding-bottom: 25px;
+padding: 10px 0 0 10px;
     border-bottom: 1px solid #eaeaea
 }
 
@@ -683,7 +682,7 @@ h3 {
 
 .markdown,
 .c-post-view__content {
-    padding: 5px 0 0 20px;
+    padding: 10px 10px 0 10px;
     font-weight: 200;
     font-size: 12pt;
 }
@@ -753,7 +752,8 @@ h3 {
     -moz-transition: all 150ms ease-in-out;
     -ms-transition: all 150ms ease-in-out;
     -o-transition: all 150ms ease-in-out;
-    transition: all 150ms ease-in-out
+    transition: all 150ms ease-in-out;
+    width: 100%
 }
 
 .markdown img.inline,
